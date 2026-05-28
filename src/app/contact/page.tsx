@@ -6,47 +6,51 @@ import { MarketingPage } from "@/components/site/MarketingPage";
 const PHONE_E164 = "972548060673";
 const EMAIL = "azack1962@gmail.com";
 
+type SubmitStatus = "idle" | "sending" | "success" | "error";
+
 export default function ContactPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<SubmitStatus>("idle");
   const [error, setError] = useState<string | null>(null);
 
-  function buildMessageBody() {
-    return [
-      `שם: ${name.trim()}`,
-      `אימייל: ${email.trim()}`,
-      `טלפון: ${phone.trim()}`,
-      "",
-      message.trim()
-    ]
-      .filter(Boolean)
-      .join("\n");
-  }
-
-  function validate(): boolean {
+  async function onSubmit(e: React.FormEvent) {
+    e.preventDefault();
     if (!name.trim() || !message.trim()) {
       setError("נא למלא שם והודעה");
-      return false;
+      return;
     }
     setError(null);
-    return true;
+    setStatus("sending");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ name, email, phone, message })
+      });
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        setStatus("error");
+        setError(data?.error ?? "השליחה נכשלה");
+        return;
+      }
+
+      setStatus("success");
+      setName("");
+      setEmail("");
+      setPhone("");
+      setMessage("");
+    } catch {
+      setStatus("error");
+      setError("שגיאת רשת. נסו שוב.");
+    }
   }
 
-  function sendViaWhatsApp(e: React.FormEvent) {
-    e.preventDefault();
-    if (!validate()) return;
-    const url = `https://wa.me/${PHONE_E164}?text=${encodeURIComponent(buildMessageBody())}`;
-    window.open(url, "_blank", "noopener,noreferrer");
-  }
-
-  function sendViaEmail() {
-    if (!validate()) return;
-    const subject = `פנייה מהאתר — ${name.trim()}`;
-    const body = buildMessageBody();
-    window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  }
+  const sending = status === "sending";
 
   return (
     <MarketingPage title="צרי קשר" eyebrow="נשמח לשמוע ממך">
@@ -90,9 +94,9 @@ export default function ContactPage() {
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
           <div className="text-lg font-semibold text-slate-900">שליחת הודעה</div>
           <p className="mt-2 text-sm text-slate-600">
-            מלאו את הפרטים ובחרו איך לשלוח — WhatsApp או אימייל.
+            מלאו את הפרטים ואחזור אליכם בהקדם.
           </p>
-          <form onSubmit={sendViaWhatsApp} className="mt-5 space-y-4">
+          <form onSubmit={onSubmit} className="mt-5 space-y-4">
             <div>
               <label className="text-sm font-medium text-slate-900">שם מלא</label>
               <input
@@ -101,6 +105,7 @@ export default function ContactPage() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
+                disabled={sending}
               />
             </div>
             <div>
@@ -112,6 +117,7 @@ export default function ContactPage() {
                 dir="ltr"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                disabled={sending}
               />
             </div>
             <div>
@@ -122,6 +128,7 @@ export default function ContactPage() {
                 dir="ltr"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
+                disabled={sending}
               />
             </div>
             <div>
@@ -133,30 +140,28 @@ export default function ContactPage() {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 required
+                disabled={sending}
               />
             </div>
 
+            {status === "success" ? (
+              <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
+                ✓ ההודעה נשלחה בהצלחה. אחזור אליכם בהקדם.
+              </div>
+            ) : null}
             {error ? (
               <div className="rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700">
                 {error}
               </div>
             ) : null}
 
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <button
-                type="submit"
-                className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700"
-              >
-                <span>💬</span> שליחה ב-WhatsApp
-              </button>
-              <button
-                type="button"
-                onClick={sendViaEmail}
-                className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
-              >
-                <span>✉️</span> שליחה באימייל
-              </button>
-            </div>
+            <button
+              type="submit"
+              disabled={sending}
+              className="inline-flex w-full items-center justify-center rounded-xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700 disabled:opacity-60"
+            >
+              {sending ? "שולח…" : "שליחת הודעה"}
+            </button>
           </form>
         </div>
       </div>
