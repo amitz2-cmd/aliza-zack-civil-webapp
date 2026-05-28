@@ -10,14 +10,29 @@ export default function ContactPage() {
             זמינה לייעוץ ראשוני ללא התחייבות. נשמח לעזור לכם להתחיל את הפרויקט נכון.
           </p>
           <div className="mt-5 space-y-3 text-sm">
-            <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
+            <a
+              href="mailto:azack1962@gmail.com"
+              className="block rounded-xl border border-slate-200 bg-slate-50 p-3 transition hover:border-brand-300 hover:bg-white"
+            >
               <div className="text-xs uppercase tracking-wide text-slate-500">אימייל</div>
-              <div className="mt-1 font-semibold text-slate-900">aliza@example.com</div>
-            </div>
-            <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
+              <div className="mt-1 font-semibold text-slate-900" dir="ltr">azack1962@gmail.com</div>
+            </a>
+            <a
+              href="tel:+972548060673"
+              className="block rounded-xl border border-slate-200 bg-slate-50 p-3 transition hover:border-brand-300 hover:bg-white"
+            >
               <div className="text-xs uppercase tracking-wide text-slate-500">טלפון</div>
-              <div className="mt-1 font-semibold text-slate-900" dir="ltr">+972 50-000-0000</div>
-            </div>
+              <div className="mt-1 font-semibold text-slate-900" dir="ltr">054-806-0673</div>
+            </a>
+            <a
+              href="https://wa.me/972548060673"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block rounded-xl border border-slate-200 bg-slate-50 p-3 transition hover:border-brand-300 hover:bg-white"
+            >
+              <div className="text-xs uppercase tracking-wide text-slate-500">WhatsApp</div>
+              <div className="mt-1 font-semibold text-slate-900" dir="ltr">054-806-0673</div>
+            </a>
             <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
               <div className="text-xs uppercase tracking-wide text-slate-500">שעות פעילות</div>
               <div className="mt-1 font-semibold text-slate-900">א׳-ה׳, 09:00 – 18:00</div>

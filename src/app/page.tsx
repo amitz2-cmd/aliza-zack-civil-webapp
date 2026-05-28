@@ -82,18 +82,20 @@ export default function HomePage() {
                   תכנון אדריכלי והנדסי מדויק — מבתים פרטיים ועד פרויקטים ציבוריים.
                 </p>
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                  <Link
-                    href="/contact"
+                  <a
+                    href="tel:+972548060673"
                     className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-brand-700"
                   >
                     <span>📞</span> לייעוץ ראשוני
-                  </Link>
-                  <Link
-                    href="/contact"
+                  </a>
+                  <a
+                    href="https://wa.me/972548060673"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
                   >
-                    <span>💬</span> שלחי לי הודעה
-                  </Link>
+                    <span>💬</span> שלחי לי הודעה ב-WhatsApp
+                  </a>
                 </div>
               </div>
 
@@ -276,13 +278,21 @@ export default function HomePage() {
               <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-slate-600">
                 אם יש לך מגרש, רעיון או פרויקט — אני כאן כדי לעזור לך לעשות את זה נכון מהשלב הראשון.
               </p>
-              <div className="mt-8 flex justify-center">
-                <Link
-                  href="/contact"
+              <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <a
+                  href="tel:+972548060673"
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-600 px-8 py-4 text-base font-semibold text-white shadow-sm hover:bg-brand-700"
                 >
                   <span>📞</span> צרי קשר עכשיו
-                </Link>
+                </a>
+                <a
+                  href="https://wa.me/972548060673"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-8 py-4 text-base font-semibold text-slate-900 hover:bg-slate-50"
+                >
+                  <span>💬</span> WhatsApp
+                </a>
               </div>
             </div>
           </Container>
