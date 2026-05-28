@@ -1,7 +1,7 @@
 "use client";
 
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { firebaseClient } from "@/lib/firebase/client";
 
 type QuoteFormState = {
@@ -27,7 +27,6 @@ const PROJECT_TYPES = [
 const STORIES = ["1", "2", "3", "4"] as const;
 
 export default function QuoteForm() {
-  const { db } = useMemo(() => firebaseClient(), []);
   const [state, setState] = useState<QuoteFormState>({
     name: "",
     email: "",
@@ -53,6 +52,7 @@ export default function QuoteForm() {
     setSuccessId(null);
     setSubmitting(true);
     try {
+      const { db } = firebaseClient();
       const docRef = await addDoc(collection(db, "quotes"), {
         requester: {
           name: state.name.trim(),
