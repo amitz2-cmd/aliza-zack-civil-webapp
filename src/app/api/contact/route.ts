@@ -3,7 +3,7 @@ import { Resend } from "resend";
 
 export const runtime = "nodejs";
 
-const TO_EMAIL = "azack1962@gmail.com";
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL ?? "azack1962@gmail.com";
 const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL ?? "onboarding@resend.dev";
 
 type ContactPayload = {
