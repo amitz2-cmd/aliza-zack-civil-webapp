@@ -99,8 +99,8 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="relative">
-                <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-br from-brand-200/60 via-sky-100/30 to-white blur-2xl" />
+              <div className="group relative">
+                <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-br from-brand-200/60 via-sky-100/30 to-white blur-2xl transition duration-700 group-hover:from-brand-300/70" />
                 <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-slate-200 shadow-lg">
                   <Image
                     src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80"
@@ -108,7 +108,7 @@ export default function HomePage() {
                     fill
                     priority
                     sizes="(min-width: 768px) 50vw, 100vw"
-                    className="object-cover"
+                    className="object-cover transition duration-700 ease-out group-hover:scale-110 group-hover:brightness-105"
                   />
                 </div>
               </div>
@@ -121,13 +121,13 @@ export default function HomePage() {
           <Container>
             <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-5">
               <div className="md:col-span-2">
-                <div className="relative aspect-square overflow-hidden rounded-3xl border border-slate-200 shadow-sm">
+                <div className="group relative aspect-square overflow-hidden rounded-3xl border border-slate-200 shadow-sm">
                   <Image
                     src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?auto=format&fit=crop&w=1200&q=80"
                     alt="עליזה זק — תכנון ועבודה על שרטוטים"
                     fill
                     sizes="(min-width: 768px) 40vw, 100vw"
-                    className="object-cover"
+                    className="object-cover transition duration-700 ease-out group-hover:scale-110 group-hover:brightness-105"
                   />
                 </div>
               </div>
@@ -200,14 +200,14 @@ export default function HomePage() {
                 </ul>
               </div>
 
-              <div className="relative">
+              <div className="group relative">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-slate-200 shadow-sm">
                   <Image
                     src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80"
                     alt="שרטוטים ותכניות אדריכליות"
                     fill
                     sizes="(min-width: 768px) 50vw, 100vw"
-                    className="object-cover"
+                    className="object-cover transition duration-700 ease-out group-hover:scale-110 group-hover:brightness-105"
                   />
                 </div>
               </div>
@@ -245,14 +245,14 @@ export default function HomePage() {
               {gallery.map((g) => (
                 <div
                   key={g.src}
-                  className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200 shadow-sm"
+                  className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200 shadow-sm transition duration-500 hover:shadow-xl"
                 >
                   <Image
                     src={g.src}
                     alt={g.alt}
                     fill
                     sizes="(min-width: 768px) 33vw, 100vw"
-                    className="object-cover transition duration-500 hover:scale-105"
+                    className="object-cover transition duration-700 ease-out group-hover:scale-110 group-hover:brightness-105"
                   />
                 </div>
               ))}
