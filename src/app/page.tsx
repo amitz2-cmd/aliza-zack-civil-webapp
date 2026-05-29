@@ -42,9 +42,9 @@ const advantages = [
 
 const gallery = [
   {
-    src: "/projects/meitar-1.jpg",
-    alt: "בית פרטי מודרני במיתר",
-    href: "/projects/meitar-modern-home"
+    src: "/projects/yavne-2.jpg",
+    alt: "בית פרטי דו-משפחתי ביבנה",
+    href: "/projects/yavne-narrow-duplex"
   },
   {
     src: "/projects/yaniv-2.jpg",

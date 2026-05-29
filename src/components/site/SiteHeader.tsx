@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "./Container";
 
@@ -12,11 +13,16 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur">
       <Container>
-        <div className="flex items-center justify-between py-4">
+        <div className="flex items-center justify-between py-3">
           <Link href="/" className="flex items-center gap-3">
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-600 text-sm font-bold text-white">
-              ע״ז
-            </span>
+            <Image
+              src="/AlizaLogo.png"
+              alt="עליזה זק — אדריכלות והנדסה"
+              width={48}
+              height={48}
+              priority
+              className="h-12 w-12 object-contain"
+            />
             <div className="leading-tight">
               <div className="text-sm font-semibold">עליזה זק</div>
               <div className="text-xs text-slate-500">אדריכלות והנדסה</div>
@@ -32,12 +38,12 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-xl bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-700"
+            <a
+              href="tel:+972548060673"
+              className="inline-flex items-center justify-center gap-1 rounded-xl bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-700"
             >
-              לייעוץ ראשוני
-            </Link>
+              <span>📞</span> לייעוץ ראשוני
+            </a>
           </div>
         </div>
       </Container>
