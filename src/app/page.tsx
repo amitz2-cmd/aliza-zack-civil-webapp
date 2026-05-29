@@ -46,8 +46,8 @@ const gallery = [
     alt: "בית פרטי מודרני"
   },
   {
-    src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80",
-    alt: "תוכניות אדריכליות"
+    src: "https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&w=1200&q=80",
+    alt: "מבנה מודרני בתכנון אדריכלי"
   },
   {
     src: "https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=1200&q=80",
@@ -203,7 +203,7 @@ export default function HomePage() {
               <div className="relative">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-slate-200 shadow-sm">
                   <Image
-                    src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80"
+                    src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80"
                     alt="שרטוטים ותכניות אדריכליות"
                     fill
                     sizes="(min-width: 768px) 50vw, 100vw"
