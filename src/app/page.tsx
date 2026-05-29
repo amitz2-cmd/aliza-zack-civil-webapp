@@ -121,13 +121,14 @@ export default function HomePage() {
           <Container>
             <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-5">
               <div className="md:col-span-2">
-                <div className="group relative aspect-square overflow-hidden rounded-3xl border border-slate-200 shadow-sm">
+                <div className="group relative aspect-[3/4] overflow-hidden rounded-3xl border border-slate-200 shadow-md">
                   <Image
-                    src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?auto=format&fit=crop&w=1200&q=80"
-                    alt="עליזה זק — תכנון ועבודה על שרטוטים"
+                    src="/aliza.jpg"
+                    alt="עליזה זק — הנדסאית בניין ואדריכלית"
                     fill
+                    quality={90}
                     sizes="(min-width: 768px) 40vw, 100vw"
-                    className="object-cover transition duration-700 ease-out group-hover:scale-110 group-hover:brightness-105"
+                    className="object-cover saturate-[1.05] brightness-[1.03] transition duration-700 ease-out group-hover:scale-105 group-hover:brightness-[1.08]"
                   />
                 </div>
               </div>
