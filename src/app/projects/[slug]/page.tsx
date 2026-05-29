@@ -36,6 +36,9 @@ export default async function ProjectDetailPage({
   const project = findProject(slug);
   if (!project) notFound();
 
+  const gallery =
+    project.gallery && project.gallery.length > 1 ? project.gallery : null;
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <SiteHeader />
@@ -53,7 +56,7 @@ export default async function ProjectDetailPage({
             <div className="mt-8 grid grid-cols-1 gap-10 md:grid-cols-2">
               <div className="order-2 md:order-1">
                 <div className="text-xs font-semibold uppercase tracking-wide text-brand-700">
-                  פרויקט
+                  פרויקט{project.location ? ` · ${project.location}` : ""}
                 </div>
                 <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
                   {project.title}
@@ -74,14 +77,14 @@ export default async function ProjectDetailPage({
               </div>
 
               <div className="order-1 md:order-2">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-slate-200 shadow-sm">
+                <div className="group relative aspect-[4/3] overflow-hidden rounded-3xl border border-slate-200 shadow-md">
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
                     priority
                     sizes="(min-width: 768px) 50vw, 100vw"
-                    className="object-cover"
+                    className="object-cover transition duration-700 ease-out group-hover:scale-105"
                   />
                 </div>
               </div>
@@ -107,7 +110,38 @@ export default async function ProjectDetailPage({
           </Container>
         </section>
 
-        <section className="py-12 md:py-16">
+        {gallery ? (
+          <section className="py-12 md:py-16">
+            <Container>
+              <div className="max-w-3xl">
+                <div className="text-xs font-semibold uppercase tracking-wide text-brand-700">
+                  גלריה
+                </div>
+                <h2 className="mt-2 text-2xl font-bold text-slate-900 md:text-3xl">
+                  עוד מבטים
+                </h2>
+              </div>
+              <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {gallery.map((src) => (
+                  <div
+                    key={src}
+                    className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200 shadow-sm"
+                  >
+                    <Image
+                      src={src}
+                      alt={project.title}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, 100vw"
+                      className="object-cover transition duration-700 ease-out group-hover:scale-105"
+                    />
+                  </div>
+                ))}
+              </div>
+            </Container>
+          </section>
+        ) : null}
+
+        <section className="border-t border-slate-200 bg-white py-12 md:py-16">
           <Container>
             <div className="rounded-3xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-8 text-center md:p-12">
               <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">

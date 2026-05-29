@@ -42,16 +42,19 @@ const advantages = [
 
 const gallery = [
   {
-    src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-    alt: "בית פרטי מודרני"
+    src: "/projects/meitar-1.jpg",
+    alt: "בית פרטי מודרני במיתר",
+    href: "/projects/meitar-modern-home"
   },
   {
-    src: "https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&w=1200&q=80",
-    alt: "מבנה מודרני בתכנון אדריכלי"
+    src: "/projects/yaniv-2.jpg",
+    alt: "וילה מודרנית — מודל יניב",
+    href: "/projects/yaniv-luxury-villa"
   },
   {
-    src: "https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=1200&q=80",
-    alt: "אתר בניה"
+    src: "/projects/talalim-1.jpg",
+    alt: "בית פרטי בקיבוץ טללים",
+    href: "/projects/talalim-kibbutz-house"
   }
 ] as const;
 
@@ -244,9 +247,10 @@ export default function HomePage() {
             </div>
             <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
               {gallery.map((g) => (
-                <div
+                <Link
                   key={g.src}
-                  className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200 shadow-sm transition duration-500 hover:shadow-xl"
+                  href={g.href}
+                  className="group relative block aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200 shadow-sm transition duration-500 hover:shadow-xl"
                 >
                   <Image
                     src={g.src}
@@ -255,7 +259,10 @@ export default function HomePage() {
                     sizes="(min-width: 768px) 33vw, 100vw"
                     className="object-cover transition duration-700 ease-out group-hover:scale-110 group-hover:brightness-105"
                   />
-                </div>
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-4 opacity-0 transition duration-500 group-hover:opacity-100">
+                    <div className="text-sm font-semibold text-white">{g.alt}</div>
+                  </div>
+                </Link>
               ))}
             </div>
             <div className="mt-8 text-center">
