@@ -42,9 +42,9 @@ const advantages = [
 
 const gallery = [
   {
-    src: "/projects/yavne-2.jpg",
-    alt: "בית פרטי דו-משפחתי ביבנה",
-    href: "/projects/yavne-narrow-duplex"
+    src: "/projects/meitar-4.jpg",
+    alt: "בית פרטי מודרני במיתר",
+    href: "/projects/meitar-modern-home"
   },
   {
     src: "/projects/yaniv-2.jpg",
@@ -114,8 +114,8 @@ export default function HomePage() {
                 <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-br from-brand-200/60 via-sky-100/30 to-white blur-2xl transition duration-700 group-hover:from-brand-300/70" />
                 <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-slate-200 shadow-lg">
                   <Image
-                    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80"
-                    alt="בית פרטי מודרני בתכנון אדריכלי"
+                    src="/projects/meitar-1.jpg"
+                    alt="בית פרטי מודרני במיתר"
                     fill
                     priority
                     sizes="(min-width: 768px) 50vw, 100vw"
