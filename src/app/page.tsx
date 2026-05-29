@@ -69,6 +69,14 @@ export default function HomePage() {
           <Container>
             <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
               <div>
+                <Image
+                  src="/AlizaLogo.png"
+                  alt="עליזה זק — אדריכלות והנדסה"
+                  width={160}
+                  height={160}
+                  priority
+                  className="mb-6 h-32 w-32 object-contain md:h-40 md:w-40"
+                />
                 <div className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-600">
                   אדריכלות
                   <span className="h-1 w-1 rounded-full bg-slate-300" />
