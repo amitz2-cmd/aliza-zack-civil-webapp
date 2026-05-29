@@ -50,25 +50,56 @@ export default function CredentialsPage() {
             <li className="flex gap-2">
               <span className="text-brand-700">✓</span> תכנון פתרונות יצירתיים למגרשים מאתגרים
             </li>
+            <li className="flex gap-2">
+              <span className="text-brand-700">✓</span> ניהול איכות בבנייה (CQM) — הסמכת{" "}
+              <span dir="ltr">U.S. Army Corps of Engineers</span>
+            </li>
           </ul>
         </div>
       </div>
 
-      <div className="mt-10 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <div className="text-lg font-semibold text-slate-900">תעודת הסמכה</div>
+      <div className="mt-10">
+        <div className="text-lg font-semibold text-slate-900">תעודות הסמכה</div>
         <p className="mt-2 text-sm text-slate-600">
-          תעודת רישום בפנקס ההנדסאים, רשות ההסמכה להנדסאים וטכנאים מוסמכים, משרד התעשייה
-          המסחר והתעסוקה.
+          הסמכות מקצועיות והכשרות נוספות בתחום ההנדסה האזרחית והניהול בבנייה.
         </p>
-        <div className="mt-5 mx-auto max-w-md">
-          <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
-            <Image
-              src="/certificate.jpg"
-              alt="תעודת הנדסאית בניין — עליזה זק"
-              fill
-              sizes="(min-width: 768px) 32rem, 100vw"
-              className="object-contain"
-            />
+
+        <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-slate-200 bg-slate-50">
+              <Image
+                src="/certificate.jpg"
+                alt="תעודת הנדסאית בניין — עליזה זק"
+                fill
+                sizes="(min-width: 768px) 32rem, 100vw"
+                className="object-contain"
+              />
+            </div>
+            <div className="mt-3 text-sm font-semibold text-slate-900">
+              תעודת הנדסאית בניין
+            </div>
+            <div className="mt-1 text-xs text-slate-600">
+              רשות ההסמכה להנדסאים וטכנאים מוסמכים · הנדסה אזרחית, תכנון מבנים · 14.11.2008
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-slate-200 bg-slate-50">
+              <Image
+                src="/certificate-qc.jpg"
+                alt="Construction Quality Management for Contractors — U.S. Army Corps of Engineers"
+                fill
+                sizes="(min-width: 768px) 32rem, 100vw"
+                className="object-contain"
+              />
+            </div>
+            <div className="mt-3 text-sm font-semibold text-slate-900">
+              ניהול איכות בבניה (CQM)
+            </div>
+            <div className="mt-1 text-xs text-slate-600">
+              U.S. Army Corps of Engineers · Professional Development Support Center · Tel Aviv,
+              25 April 2017
+            </div>
           </div>
         </div>
       </div>
