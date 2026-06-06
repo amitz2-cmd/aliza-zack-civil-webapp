@@ -77,14 +77,14 @@ export default async function ProjectDetailPage({
               </div>
 
               <div className="order-1 md:order-2">
-                <div className="group relative aspect-[4/3] overflow-hidden rounded-3xl border border-slate-200 shadow-md">
+                <div className="group relative aspect-[4/3] overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-100 to-slate-50 shadow-md">
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
                     priority
                     sizes="(min-width: 768px) 50vw, 100vw"
-                    className="object-cover transition duration-700 ease-out group-hover:scale-105"
+                    className="object-contain transition duration-700 ease-out group-hover:scale-105"
                   />
                 </div>
               </div>
@@ -125,14 +125,14 @@ export default async function ProjectDetailPage({
                 {gallery.map((src) => (
                   <div
                     key={src}
-                    className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200 shadow-sm"
+                    className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-100 to-slate-50 shadow-sm"
                   >
                     <Image
                       src={src}
                       alt={project.title}
                       fill
                       sizes="(min-width: 1024px) 33vw, 100vw"
-                      className="object-cover transition duration-700 ease-out group-hover:scale-105"
+                      className="object-contain transition duration-700 ease-out group-hover:scale-105"
                     />
                   </div>
                 ))}

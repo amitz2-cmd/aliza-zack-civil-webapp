@@ -13,13 +13,13 @@ export default function ProjectsPage() {
             href={`/projects/${p.slug}`}
             className="group block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-lg"
           >
-            <div className="relative aspect-[4/3] overflow-hidden">
+            <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-slate-100 to-slate-50">
               <Image
                 src={p.image}
                 alt={p.title}
                 fill
                 sizes="(min-width: 1024px) 33vw, 100vw"
-                className="object-cover transition duration-500 group-hover:scale-105"
+                className="object-contain transition duration-500 group-hover:scale-105"
               />
             </div>
             <div className="p-6">
