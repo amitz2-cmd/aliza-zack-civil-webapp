@@ -12,10 +12,28 @@ body {
 }
 
 body {
-  @apply bg-white text-slate-900 antialiased;
+  @apply bg-stone-50 text-slate-900 antialiased;
 }
 
 ::selection {
   @apply bg-brand-200 text-slate-900;
 }
 
+/* Subtle architectural grid — used as a hero backdrop. */
+.bg-blueprint {
+  background-color: #f7f5f1;
+  background-image:
+    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Warm cream gradient — slightly deeper tone. */
+.bg-warm-page {
+  background-image: linear-gradient(
+    to bottom,
+    #ebe4d5 0%,
+    #f2ece0 40%,
+    #f6f1e6 100%
+  );
+}

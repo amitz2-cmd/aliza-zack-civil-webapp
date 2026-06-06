@@ -13,7 +13,7 @@ export function MarketingPage({
   children: ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen bg-warm-page">
       <SiteHeader />
       <main>
         <section className="py-12 md:py-16">

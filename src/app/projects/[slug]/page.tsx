@@ -40,7 +40,7 @@ export default async function ProjectDetailPage({
     project.gallery && project.gallery.length > 1 ? project.gallery : null;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen bg-warm-page">
       <SiteHeader />
 
       <main>
