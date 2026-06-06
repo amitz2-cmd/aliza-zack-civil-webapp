@@ -105,7 +105,7 @@ export default function HomePage() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
                   >
-                    <span>💬</span> שלחי לי הודעה ב-WhatsApp
+                    <span>💬</span> שלחו לי הודעה ב-WhatsApp
                   </a>
                 </div>
               </div>
