@@ -72,10 +72,10 @@ export default function HomePage() {
                 <Image
                   src="/AlizaLogo.png"
                   alt="עליזה זק — אדריכלות והנדסה"
-                  width={160}
-                  height={160}
+                  width={320}
+                  height={320}
                   priority
-                  className="mb-6 h-32 w-32 object-contain md:h-40 md:w-40"
+                  className="mb-6 h-56 w-56 object-contain md:h-72 md:w-72"
                 />
                 <div className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-600">
                   אדריכלות

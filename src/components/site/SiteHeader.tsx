@@ -18,10 +18,10 @@ export function SiteHeader() {
             <Image
               src="/AlizaLogo.png"
               alt="עליזה זק — אדריכלות והנדסה"
-              width={48}
-              height={48}
+              width={72}
+              height={72}
               priority
-              className="h-12 w-12 object-contain"
+              className="h-16 w-16 object-contain"
             />
             <div className="leading-tight">
               <div className="text-sm font-semibold">עליזה זק</div>
